@@ -9,7 +9,7 @@
 
 section {
     position: relative;
-    background: url(background.jpg) center center/cover no-repeat;
+    background: url(background-min.jpg) center center/cover no-repeat;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -32,7 +32,7 @@ section {
     position: relative;
     width: 360px;
     height: 380px;
-    background: url(background.jpg);
+    background: url(background-min.jpg);
     background-size: cover;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.180);
     border: 1px solid #ffffff1a;
@@ -52,7 +52,7 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url(background.jpg) center center/cover no-repeat;
+    background: url(background-min.jpg) center center/cover no-repeat;
     filter: blur(10px);
     z-index: -1;
     background-size: 50%;
