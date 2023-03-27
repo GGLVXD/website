@@ -11,4 +11,4 @@ jobs:
     steps:
       - name: Create directory
         run: |
-          ls
+          mkdir docs/index.html
