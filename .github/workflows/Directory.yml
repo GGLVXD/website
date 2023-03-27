@@ -11,4 +11,4 @@ jobs:
     steps:
       - name: Create directory
         run: |
-          mkdir docs
+          mkdir docs && ls
