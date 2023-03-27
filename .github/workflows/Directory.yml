@@ -1,4 +1,4 @@
-name: My Workflow
+name: Create Docs Directory
 
 on:
   push:
@@ -6,9 +6,21 @@ on:
       - main
 
 jobs:
-  build:
+  create_docs_directory:
     runs-on: ubuntu-latest
     steps:
-      - name: Create directory
+      - name: Create Docs Directory
         run: |
-          mkdir docs && ls
+          mkdir docs
+          touch docs/README.md
+          echo "# My Documentation" >> docs/README.md
+      - name: Commit and Push Changes
+        uses: actions/checkout@v2
+        with:
+          ref: main
+        run: |
+          git config --global user.email "gglvmax@gmail.com"
+          git config --global user.name "gglvxd"
+          git add docs
+          git commit -m "Add docs directory"
+          git push
