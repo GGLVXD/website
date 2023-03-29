@@ -1,45 +1,32 @@
-// Define variables
-const userList = document.getElementById("userList");
-const search = document.getElementById("search");
-const loadBtn = document.getElementById("loadBtn");
 const usersPerPage = 100;
 let currentPage = 1;
-let users = [];
+let endIndex = usersPerPage;
+const userList = document.getElementById("userList");
+const searchInput = document.getElementById("searchInput");
+const loadBtn = document.getElementById("loadBtn");
+const loadCount = document.getElementById("loadCount");
 
-// Fetch data from JSON file
-fetch("data.json")
-  .then(response => response.json())
-  .then(data => {
-    users = data;
-    displayUsers(users.slice(0, usersPerPage));
-  });
-
-// Display users on page
-function displayUsers(users) {
+function displayUsers(startIndex, endIndex) {
   userList.innerHTML = "";
-  users.forEach(user => {
+  for (let i = startIndex; i < endIndex && i < users.length; i++) {
+    const user = users[i];
     const li = document.createElement("li");
-    li.classList.add("user");
-    li.innerHTML = `<span class="name">${user.name}</span><span class="amount">$${user.amount}</span>`;
+    li.textContent = `${i + 1}. ${user.name} $${user.amount}`;
     userList.appendChild(li);
-  });
+  }
 }
 
 loadBtn.addEventListener("click", () => {
   currentPage++;
   const startIndex = (currentPage - 1) * usersPerPage;
-  const endIndex = currentPage * usersPerPage;
+  endIndex = currentPage * usersPerPage;
   if (startIndex >= users.length) {
     loadBtn.disabled = true;
     return;
   }
-  displayUsers(users.slice(startIndex, endIndex));
+  displayUsers(startIndex, endIndex);
+  loadCount.textContent = `Loaded ${endIndex} users`;
 });
 
-
-// Search users as the user types
-search.addEventListener("keyup", () => {
-  const searchValue = search.value.toLowerCase();
-  const filteredUsers = users.filter(user => user.name.toLowerCase().includes(searchValue));
-  displayUsers(filteredUsers);
-});
+displayUsers(0, endIndex);
+loadCount.textContent = `Loaded ${endIndex} users`;
