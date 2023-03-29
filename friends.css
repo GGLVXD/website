@@ -1,30 +1,31 @@
-.friend-list {
+.friends-box {
   background-color: black;
   color: white;
   padding: 20px;
+  border-radius: 10px;
+}
+
+.friends-box h2 {
+  text-align: center;
 }
 
 .friend {
   display: inline-block;
-  width: 200px;
-  height: 200px;
   margin: 10px;
+  text-align: center;
+  cursor: pointer;
 }
 
 .friend img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
 
-.friend h2 {
-  margin: 0;
-  padding-top: 10px;
-  text-align: center;
-  font-size: 20px;
+.friend p {
+  margin-top: 10px;
 }
 
-.friend a {
-  color: white;
-  text-decoration: none;
+.friend:hover {
+  background-color: gray;
 }
