@@ -9,7 +9,7 @@
 
 section {
     position: relative;
-    background: url(img/background.webp) center center/cover no-repeat;
+    background: #000000 center center/cover no-repeat;
     min-height: 100vh;
     display: flex;
     justify-content: center;
