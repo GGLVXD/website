@@ -1,33 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User List</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  <header>
-    <h1>User List</h1>
-    <input type="text" id="searchInput" placeholder="Search by name" />
-  </header>
-
-  <main>
-    <ul id="userList">
-      <!-- Users will be dynamically added here -->
-    </ul>
-  </main>
-
-  <footer>
-    <div id="loadMoreContainer">
-      <button id="loadBtn">Load more</button>
-      <span id="loadCount"></span>
-    </div>
-  </footer>
-
-  <script src="app.js"></script>
-</body>
-
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>User Data List</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>User Data List</h1>
+      <input type="text" id="search" placeholder="Search by name...">
+    </header>
+    <main>
+      <ul id="data-list"></ul>
+      <button id="load-more">Load More</button>
+    </main>
+    <script src="app.js"></script>
+  </body>
 </html>
