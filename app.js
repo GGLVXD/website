@@ -9,9 +9,12 @@ let loadSize = 100; // How many items to load each time the button is clicked
 // Function to render the data to the HTML list
 function renderData() {
   dataList.innerHTML = '';
-  displayedData.forEach(item => {
+  displayedData.forEach((item, index) => {
     const li = document.createElement('li');
-    li.textContent = `${item.name} $${item.amount}`;
+    const span = document.createElement('span');
+    span.textContent = `${index + 1}. `;
+    li.appendChild(span);
+    li.appendChild(document.createTextNode(`${item.name} $${item.amount}`));
     dataList.appendChild(li);
   });
 }
