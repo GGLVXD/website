@@ -1,32 +1,54 @@
-const usersPerPage = 100;
-let currentPage = 1;
-let endIndex = usersPerPage;
-const userList = document.getElementById("userList");
-const searchInput = document.getElementById("searchInput");
-const loadBtn = document.getElementById("loadBtn");
-const loadCount = document.getElementById("loadCount");
+const dataList = document.getElementById('data-list');
+const loadMoreButton = document.getElementById('load-more');
+const searchInput = document.getElementById('search');
 
-function displayUsers(startIndex, endIndex) {
-  userList.innerHTML = "";
-  for (let i = startIndex; i < endIndex && i < users.length; i++) {
-    const user = users[i];
-    const li = document.createElement("li");
-    li.textContent = `${i + 1}. ${user.name} $${user.amount}`;
-    userList.appendChild(li);
-  }
+let data = []; // This will be populated by the JSON file later
+let displayedData = []; // This will contain the currently displayed data
+let loadSize = 100; // How many items to load each time the button is clicked
+
+// Function to render the data to the HTML list
+function renderData() {
+  dataList.innerHTML = '';
+  displayedData.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = `${item.name} $${item.amount}`;
+    dataList.appendChild(li);
+  });
 }
 
-loadBtn.addEventListener("click", () => {
-  currentPage++;
-  const startIndex = (currentPage - 1) * usersPerPage;
-  endIndex = currentPage * usersPerPage;
-  if (startIndex >= users.length) {
-    loadBtn.disabled = true;
-    return;
-  }
-  displayUsers(startIndex, endIndex);
-  loadCount.textContent = `Loaded ${endIndex} users`;
+// Function to filter the data by name
+function filterData(name) {
+  displayedData = data.filter(item => item.name.toLowerCase().includes(name.toLowerCase()));
+  renderData();
+}
+
+// Function to load more data
+function loadMore() {
+  const startIndex = displayedData.length;
+  const endIndex = startIndex + loadSize;
+  const newData = data.slice(startIndex, endIndex);
+  displayedData = displayedData.concat(newData);
+  renderData();
+}
+
+// Event listener for the search input
+searchInput.addEventListener('input', () => {
+  filterData(searchInput.value);
 });
 
-displayUsers(0, endIndex);
-loadCount.textContent = `Loaded ${endIndex} users`;
+// Event listener for the load more button
+loadMoreButton.addEventListener('click', () => {
+  loadMore();
+});
+
+// Load the data from the JSON file
+fetch('data.json')
+  .then(response => response.json())
+  .then(json => {
+    data = json;
+    displayedData = data.slice(0, loadSize);
+    renderData();
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
