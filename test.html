@@ -2,8 +2,8 @@
 <html>
   <head>
     <style>
-      /* Add box styling to each list item */
-      li {
+      /* Add box styling to the container element */
+      .list-container {
         border: 1px solid black;
         padding: 10px;
         margin-bottom: 10px;
@@ -15,13 +15,22 @@
         padding: 0;
         margin: 0;
       }
+
+      /* Add title styling to the h2 element */
+      h2 {
+        text-align: center;
+        margin-top: 0;
+      }
     </style>
   </head>
   <body>
-    <ul>
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-    </ul>
+    <div class="list-container">
+      <h2>A List</h2>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+    </div>
   </body>
 </html>
