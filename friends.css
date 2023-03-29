@@ -1,0 +1,34 @@
+.friends-box {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.friend {
+  width: 200px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.friend img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.friend h3 {
+  margin: 0;
+  text-align: center;
+}
+
+.friend a {
+  color: white;
+  text-decoration: none;
+}
