@@ -1,0 +1,40 @@
+  /* Add box styling to each list item */
+      a, a:hover, a:active {
+        text-decoration: none;
+        color: black;
+        }
+      
+      .list-item {
+        background: #adb4c2;
+        border:1px solid #6b7079;
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+        transition: ease-out 0.5s;
+      }
+
+      .list-item:hover {
+        background: #6b7079;
+        border:1px solid #adb4c2;
+      }
+      
+      /* Add some spacing between the list items */
+      .list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      /* Add title styling to the h3 element */
+      .list-item h3 {
+        margin-top: 0;
+      }
+
+      /* Add description styling to the p element */
+      .list-item p {
+        margin-bottom: 0;
+      }
+      
+      .list-item a {
+        text-decoration: none;
+        }
