@@ -25,13 +25,17 @@ function displayUsers(users) {
   });
 }
 
-// Load more users when button is clicked
 loadBtn.addEventListener("click", () => {
   currentPage++;
   const startIndex = (currentPage - 1) * usersPerPage;
   const endIndex = currentPage * usersPerPage;
+  if (startIndex >= users.length) {
+    loadBtn.disabled = true;
+    return;
+  }
   displayUsers(users.slice(startIndex, endIndex));
 });
+
 
 // Search users as the user types
 search.addEventListener("keyup", () => {
