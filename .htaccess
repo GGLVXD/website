@@ -4,10 +4,7 @@ RewriteEngine on
 RewriteCond %{HTTP_HOST} ^gglvxd.eu.org[nc]
 RewriteRule ^(.*)$ http://www.gglvxd.eu.org/$1 [r=301,nc]
 
-//Caching schema
-<FilesMatch "\.(img/gglvxd.webp|img/background.webp|css/footer.css|css/friends.css|css/list.css|css/style.css|css/script2.css)$">
-Header set Cache-Control "public, max-age=1"
-</FilesMatch>
+
 
 //Custom 400 errors
 ErrorDocument 400 errors/400.html
