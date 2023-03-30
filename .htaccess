@@ -1,0 +1,26 @@
+//Rewrite to www
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^gglvxd.eu.org[nc]
+RewriteRule ^(.*)$ http://www.gglvxd.eu.org/$1 [r=301,nc]
+
+//Caching schema
+<FilesMatch "\.(img/gglvxd.webp|img/background.webp|css/footer.css|css/friends.css|css/list.css|css/style.css|css/script2.css)$">
+Header set Cache-Control "public, max-age=21600"
+</FilesMatch>
+
+//Custom 400 errors
+ErrorDocument 400 errors/400.html
+
+//Custom 401 errors
+ErrorDocument 401 errors/401.html
+
+//Custom 403 errors
+ErrorDocument 403 errors/403.html
+
+//Custom 404 errors
+ErrorDocument 404 errors/404.html
+
+//Custom 500 errors
+ErrorDocument 500 errors/500.html
+ 
