@@ -25,6 +25,7 @@ body {
       
       /* Add some spacing between the list items */
       .list {
+        Background-color: #24262b;
         list-style-type: none;
         padding: 0;
         margin: 0;
