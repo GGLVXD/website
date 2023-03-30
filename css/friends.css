@@ -12,6 +12,8 @@
 .friend {
   display: inline-block;
   margin: 10px;
+box-sizing: border-box;
+  text-align: center;
 }
 
 .friend img {
