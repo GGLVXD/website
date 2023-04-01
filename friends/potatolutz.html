@@ -82,7 +82,7 @@
 
 section {
     position: relative;
-    background: black;
+    background: url('https://images.unsplash.com/photo-1625685554554-d6fb92bda88e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=8');
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -110,7 +110,8 @@ section {
     position: relative;
     width: 370px;
     height: 500px;
-    background: black;
+    background: transparent;
+    backdrop-filter: blur(20px);
     background-size: cover;
     box-shadow:
     0 0 1.75px #a40101,
@@ -141,7 +142,7 @@ section {
 }
 
 .btn {
-    background: rgb(0, 0, 0);
+    background: transparent;
     box-shadow:
     0 0 1.75px #a40101,
     0 0 1px #a40101,
@@ -162,7 +163,8 @@ section {
 }
 
 .btn:hover {
-    background: rgb(0, 0, 0);
+    background: rgba(255, 255, 255, 0.047);
+    backdrop-filter: blur(50px);
     box-shadow:
     0 0 1.75px #a4a4a4,
     0 0 1px #a3a2a2,
