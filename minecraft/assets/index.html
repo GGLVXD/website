@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image List</title>
+  <style>
+    ul {
+      list-style-type: none;
+    }
+
+    li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <ul id="image-list"></ul>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      var imageList = document.getElementById('image-list');
+      var imageFolder = ''; // Provide the path to the folder containing your images
+
+      // Fetch the image filenames using JavaScript
+      fetchImageFilenames(imageFolder)
+        .then(function(filenames) {
+          // Generate the list dynamically
+          for (var i = 0; i < filenames.length; i++) {
+            var filename = filenames[i];
+            var imagePath = imageFolder + filename;
+
+            var listItem = document.createElement('li');
+            var link = document.createElement('a');
+            link.setAttribute('href', imagePath);
+            var img = document.createElement('img');
+            img.setAttribute('src', imagePath);
+            img.setAttribute('alt', 'Image ' + (i + 1));
+
+            link.appendChild(img);
+            listItem.appendChild(link);
+            imageList.appendChild(listItem);
+          }
+        })
+        .catch(function(error) {
+          console.log('Error fetching image filenames:', error);
+        });
+    });
+
+    // Function to fetch the image filenames using JavaScript
+    function fetchImageFilenames(imageFolder) {
+      return new Promise(function(resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', imageFolder);
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              var filenames = [];
+              var response = xhr.responseText;
+              var parser = new DOMParser();
+              var htmlDoc = parser.parseFromString(response, 'text/html');
+              var links = htmlDoc.getElementsByTagName('a');
+              for (var i = 0; i < links.length; i++) {
+                var link = links[i];
+                var filename = link.getAttribute('href');
+                if (filename.endsWith('.jpg') || filename.endsWith('.jpeg') || filename.endsWith('.png')) {
+                  filenames.push(filename);
+                }
+              }
+              resolve(filenames);
+            } else {
+              reject(new Error('Failed to fetch image filenames'));
+            }
+          }
+        };
+        xhr.send();
+      });
+    }
+  </script>
+</body>
+</html>
