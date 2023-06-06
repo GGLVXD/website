@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>In-page Search</title>
+    <style>
+      /* CSS styles for the result boxes */
+      .result-box {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .result-title {
+        font-size: 16px;
+        font-weight: bold;
+        color: blue;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+
+      .result-description {
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
+    </style>
+    <script>
+      // List of searchable pages (could be database entries, JSON data, etc.)
+      var db = [
+        {
+          title: "Car",
+          description: "Volvo, BMW, Toyota",
+          url: "https://example.com/cars"
+        },
+        {
+          title: "Animal",
+          description: "horse, dog, cat",
+          url: "https://example.com/animals"
+        },
+        {
+          title: "Name",
+          description: "John, Matt, Elisabeth, Maria",
+          url: "https://example.com/names"
+        },
+        {
+          title: "Colour",
+          description: "blue, yellow, red, green",
+          url: "https://example.com/colors"
+        },
+        {
+          title: "Language",
+          description: "PHP, JavaScript, CSS, HTML",
+          url: "https://example.com/languages"
+        }
+      ];
+    </script>
+  </head>
+  <body>
+    <form action="#" onsubmit="printResult(this); return false;">
+      <input type="search" name="q" placeholder="Search..." />
+      <button type="submit">Search</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+      /**
+       * Checks if @needle is part of any page's title, description, or URL
+       * If found, add the whole page object to the results array
+       * @return {array} results
+       */
+      function search(needle) {
+        var result = [];
+        for (var i = 0; i < db.length; i++) {
+          if (
+            db[i].title.indexOf(needle) >= 0 ||
+            db[i].description.indexOf(needle) >= 0 ||
+            db[i].url.indexOf(needle) >= 0
+          ) {
+            result.push(db[i]);
+          }
+        }
+        return result;
+      }
+
+      /**
+       * Takes care of printing out the results returned by the search() function
+       * @param {object} form - The form element where the search was performed
+       * @return {void}
+       */
+      function printResult(form) {
+        var query = form.q.value;
+        var results = search(query);
+        var output = "";
+        for (var i = 0; i < results.length; i++) {
+          output += '<div class="result-box">';
+          output +=
+            '<div class="result-title" onclick="redirectToURL(\'' +
+            results[i].url +
+            '\')">' +
+            results[i].title +
+            '</div><div class="result-description">' +
+            results[i].description +
+            "</div>";
+          output += "</div>";
+        }
+        document.getElementById("result").innerHTML = output;
+
+        // Update the URL with the search query
+        var url = window.location.href.split("?")[0];
+        window.history.replaceState({}, document.title, url + "?q=" + encodeURIComponent(query));
+      }
+
+      /**
+       * Redirects to the specified URL
+       * @param {string} url - The URL to redirect to
+       * @return {void}
+       */
+      function redirectToURL(url) {
+        window.location.href = url;
+      }
+    </script>
+  </body>
+</html>
