@@ -1,0 +1,29 @@
+{
+  "supportsHttps": false,
+  "protocol": "socks5",
+  "ip": "n7.danbot.host",
+  "port": "1196",
+  "get": true,
+  "post": true,
+  "cookies": true,
+  "referer": true,
+  "user-agent": true,
+  "anonymityLevel": 1,
+  "websites": {
+    "example": true,
+    "google": true,
+    "amazon": false,
+    "yelp": false,
+    "google_maps": true
+  },
+  "country": "France",
+  "unixTimestampMs": 1690737461368,
+  "tsChecked": 1690737461,
+  "unixTimestamp": 1690737461,
+  "curl": "socks5://n7.danbot.host:1196",
+  "ipPort": "172.64.136.12:1196",
+  "type": "socks5",
+  "speed": 6.44,
+  "otherProtocols": {},
+  "verifiedSecondsAgo": 3083
+}
