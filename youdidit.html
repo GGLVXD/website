@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You Did It!</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    
+    .content {
+      margin: 30px auto;
+      padding: 20px;
+      border: 2px solid white;
+    }
+
+    .copy-button {
+      background-color: white;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>You Did It!</h1>
+    <p>You successfully decoded the hexadecimals. Copy the code and send it to GGLVXD DM's.</p>
+    <p><strong>Hexaton Code:</strong> GGLVXD</p>
+    <button class="copy-button" id="copyButton">Copy Code</button>
+  </div>
+
+  <script>
+    document.getElementById("copyButton").addEventListener("click", function() {
+      const codeToCopy = "GGLVXD";
+      const textarea = document.createElement("textarea");
+      textarea.value = codeToCopy;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      alert("Code copied to clipboard: " + codeToCopy);
+    });
+  </script>
+
+  <p><a href="main.html">Back to Main Page</a></p>
+</body>
+</html>
+￼Enter
