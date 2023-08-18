@@ -2,8 +2,8 @@ let cookieCount = 0;
 let cookiesPerSecond = 1;
 let upgrades = [
   { name: "Upgrade 1", cps: 2, cost: 30 },
-  { name: "Upgrade 2", cps: 20, cost: 1000 },
-  { name: "Upgrade 3", cps: 200, cost: 10000 }
+  { name: "Upgrade 2", cps: 20, cost: 100 },
+  { name: "Upgrade 3", cps: 200, cost: 1000 }
 ];
 
 // Load data from local storage
@@ -43,6 +43,7 @@ function buyUpgrade(index) {
 function updateCookies() {
   cookieCount += cookiesPerSecond;
   updateCookieCount();
+  document.getElementById("cookiesPerSecond").textContent = cookiesPerSecond; // Update CPS display
   saveToLocalStorage();
 }
 
@@ -58,6 +59,7 @@ function saveToLocalStorage() {
 // Initial setup
 setInterval(updateCookies, 1000);
 updateCookieCount();
+document.getElementById("cookiesPerSecond").textContent = cookiesPerSecond; // Initialize CPS display
 for (let i = 0; i < upgrades.length; i++) {
   updateUpgradeCost(i);
 }
