@@ -3,7 +3,7 @@ let cookiesPerSecond = 1;
 let upgrades = [
   { name: "Upgrade 1", cps: 2, cost: 30 },
   { name: "Upgrade 2", cps: 20, cost: 100 },
-  { name: "Upgrade 3", cps: 100, cost: 1000 }
+  { name: "Upgrade 3", cps: 200, cost: 1000 }
 ];
 
 // Load data from local storage
