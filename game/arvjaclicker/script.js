@@ -10,6 +10,10 @@ let upgrades = [
 cookieCount = parseInt(localStorage.getItem("cookieCount")) || cookieCount;
 cookiesPerSecond = parseInt(localStorage.getItem("cookiesPerSecond")) || cookiesPerSecond;
 
+for (let i = 0; i < upgrades.length; i++) {
+  upgrades[i].cost = parseInt(localStorage.getItem(`upgrade${i + 1}Cost`)) || upgrades[i].cost;
+}
+
 function updateCookieCount() {
   document.getElementById("cookieCount").textContent = cookieCount;
 }
@@ -46,6 +50,9 @@ function updateCookies() {
 function saveToLocalStorage() {
   localStorage.setItem("cookieCount", cookieCount);
   localStorage.setItem("cookiesPerSecond", cookiesPerSecond);
+  for (let i = 0; i < upgrades.length; i++) {
+    localStorage.setItem(`upgrade${i + 1}Cost`, upgrades[i].cost);
+  }
 }
 
 // Initial setup
