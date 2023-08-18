@@ -37,8 +37,15 @@
     width: 150px;
     cursor: pointer;
     border-radius: 50%;
+    border-radius: 50%; /* Make it a circle */
+    animation: spin 20s linear infinite; /* Apply spinning animation */
   }
   
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
   .info-container {
     text-align: center;
     margin-top: 10px;
@@ -74,4 +81,5 @@
   }
   
 
+  
   
