@@ -68,6 +68,14 @@
     width: 80px;
   }
   
+  #endgame-upgrade {
+    text-align: center;
+    margin: 10px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 15px;
+  }
+
   /* Search bar styles */
   .search {
     text-align: center;
@@ -81,5 +89,4 @@
   }
   
 
-  
   
