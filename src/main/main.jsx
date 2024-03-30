@@ -1,6 +1,6 @@
 import React from 'react';
 import './main.css';
-import backgroundImage from '../assets/background.webp';
+import backgroundImage from '../assets/background.jpg';
 import Pfp from '../minicrap/pfp/pfp.jsx';
 
 function App() {
