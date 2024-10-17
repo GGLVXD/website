@@ -1,19 +1,38 @@
-[GGLVXD.EU.ORG](https://gglvxd.eu.org)
+# create-svelte
 
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
 
-## CC0 1.0 Universal (Public Domain Dedication)
+## Creating a project
 
-This work has been dedicated to the public domain under the CC0 1.0 Universal license.
+If you're seeing this, you've probably already done this step. Congrats!
 
-### What you CAN do:
-- Copy, modify, distribute, and perform the work, even for commercial purposes, all without asking permission.
-- Use the work for any purpose, including commercial and promotional purposes.
-- Build upon, remix, or adapt the work and use it in new ways.
+```bash
+# create a new project in the current directory
+npm create svelte@latest
 
-### What you CANNOT do:
-- Claim any trademark or patent rights that might be associated with the work (if any exist).
-- Expect any warranties for the work. It is provided “as-is,” with no guarantees about its quality or usability.
+# create a new project in my-app
+npm create svelte@latest my-app
+```
 
-### Limitations:
-- The original creator of the work does not guarantee that the work doesn’t infringe on others' rights.
-- You are responsible for clearing any rights, such as image or likeness rights, that may apply to the work.
+## Developing
+
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```bash
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+## Building
+
+To create a production version of your app:
+
+```bash
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
