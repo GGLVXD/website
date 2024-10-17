@@ -1,4 +1,8 @@
-.background {
-	background-color: #282c34;
+section, body {
+	background-color: #282c34; // base color
 	min-height: 100vh;
   }
+
+h1 {
+	color: white;
+}
