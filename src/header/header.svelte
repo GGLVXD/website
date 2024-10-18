@@ -11,12 +11,10 @@
 	  <a href="/">GGLVXD.EU.ORG</a>
 	</div>
 	
-	<!-- Mobile Menu Button -->
 	<button class="mobile-menu-btn" on:click={toggleMenu}>
 	  <span>{mobileMenuOpen ? '✖' : '☰'}</span>
 	</button>
   
-	<!-- Desktop Links -->
 	<nav class={`nav-links ${mobileMenuOpen ? 'open' : ''}`}>
 	  <a href="/">Home</a>
 	  <a href="https://status.gglvxd.eu.org" target="_blank">Status</a>
