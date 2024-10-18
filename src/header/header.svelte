@@ -1,35 +1,30 @@
 <script>
-	let isMenuOpen = false;
-	let links = [
-		{ name: "Home", url: "/" },
-		{ name: "Status", url: "https://status.gglvxd.eu.org" },
-		{ name: "Repo", url: "https://github.com/gglvxd/website" }
-	];
-
-	const toggleMenu = () => {
-		isMenuOpen = !isMenuOpen;
-	};
-</script>
-
-<header>
+	let mobileMenuOpen = false;
+  
+	function toggleMenu() {
+	  mobileMenuOpen = !mobileMenuOpen;
+	}
+  </script>
+  
+  <header class="header">
 	<div class="logo">
-		<a href="/">GGLVXD.EU.ORG</a>
+	  <a href="/">GGLVXD.EU.ORG</a>
 	</div>
-
-	<nav>
-		<ul class:isOpen={isMenuOpen} class:isClosed={!isMenuOpen}>
-			{#each links as link}
-				<li><a href={link.url} target="_blank" rel="noopener">{link.name}</a></li>
-			{/each}
-		</ul>
-		<div class="hamburger" on:click={toggleMenu} class:isOpen={isMenuOpen}>
-			<span></span>
-			<span></span>
-			<span></span>
-		</div>
+	
+	<!-- Mobile Menu Button -->
+	<button class="mobile-menu-btn" on:click={toggleMenu}>
+	  <span>{mobileMenuOpen ? '✖' : '☰'}</span>
+	</button>
+  
+	<!-- Desktop Links -->
+	<nav class={`nav-links ${mobileMenuOpen ? 'open' : ''}`}>
+	  <a href="/">Home</a>
+	  <a href="https://status.gglvxd.eu.org" target="_blank">Status</a>
+	  <a href="https://github.com/gglvxd/website" target="_blank">Github</a>
 	</nav>
-</header>
-
-<style>
-	@import 'header.css';
-</style>
+  </header>
+  
+  <style>
+	@import '../header/header.css';
+  </style>
+  
