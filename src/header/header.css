@@ -1,77 +1,110 @@
-.Header {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
+.header {
+	font-family: 'Poppins', sans-serif;
+	background-color: #282c34;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
+	color: white;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
   }
   
-  .Nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+  .logo a {
+	font-size: 1.8rem;
+	font-weight: 600; 
+	color: white;
+	text-decoration: none;
+	transition: color 0.3s ease-in-out;
   }
   
-  .Logo h2 {
-    color: white;
-    margin: 0;
+  .logo a:hover {
+	color: #61dafb;
   }
   
-  .NavLinks ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
+  .nav-links {
+	display: flex;
+	gap: 2rem;
+	font-size: 1rem;
+	align-items: center;
   }
   
-  .NavLinks ul li {
-    margin-right: 20px;
+  .nav-links a {
+	color: white;
+	text-decoration: none;
+	font-weight: 500; 
+	letter-spacing: 0.05rem; 
+	padding-bottom: 2px;
+	position: relative;
+	transition: color 0.3s ease-in-out, padding-bottom 0.3s ease;
   }
   
-  .NavLinks ul li a {
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s ease;
+  .nav-links a:hover {
+	color: #61dafb;
+	padding-bottom: 5px; 
   }
   
-  .NavLinks ul li a:hover {
-    color: #42a5f5;
+  .nav-links a::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background-color: #61dafb;
+	transition: width 0.3s ease-in-out;
   }
   
-  .MenuButton {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
+  .nav-links a:hover::after {
+	width: 100%;
+  }
+  
+  .nav-links a.active {
+	color: #61dafb;
+  }
+  
+  .nav-links a.active::after {
+	width: 100%; 
+  }
+  
+  .mobile-menu-btn {
+	display: none;
+	background: none;
+	border: none;
+	color: white;
+	font-size: 2rem;
+	cursor: pointer;
   }
   
   @media (max-width: 768px) {
-    .NavLinks ul {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: rgba(0, 0, 0, 0.7);
-      width: 100%;
-      padding: 20px;
-    }
+	.nav-links {
+	  position: absolute;
+	  top: 100%;
+	  left: 0;
+	  right: 0;
+	  flex-direction: column;
+	  background-color: #282c34;
+	  padding: 1rem 2rem;
+	  display: none;
+	}
   
-    .NavLinks ul.open {
-      display: flex;
-    }
+	.nav-links.open {
+	  display: flex;
+	}
   
-    .NavLinks ul li {
-      margin: 10px 0;
-    }
+	.mobile-menu-btn {
+	  display: block;
+	}
+  }
   
-    .MenuButton {
-      display: block;
-    }
+  @media (max-width: 480px) {
+	.logo a {
+	  font-size: 1.5rem;
+	}
+  
+	.nav-links {
+	  gap: 1rem;
+	}
   }
   
