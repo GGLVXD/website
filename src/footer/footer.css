@@ -1,9 +1,16 @@
 html, body {
     height: 100%;
     margin: 0;
-    padding: 0;
+}
+
+.wrapper {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
 }
 
 footer {
@@ -17,8 +24,11 @@ footer {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    margin-top: auto; 
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
+
 
 .footer-content {
     display: flex;
