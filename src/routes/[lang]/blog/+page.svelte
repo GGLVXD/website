@@ -1,8 +1,8 @@
 <script>
     export let data;
     const { posts } = data;
-    import Header from '../../header/header.svelte';
-    import Footer from '../../footer/footer.svelte';
+    import Header from '../../../header/header.svelte';
+    import Footer from '../../../footer/footer.svelte';
     import '../../routes/blog/page.css'
   </script>
 

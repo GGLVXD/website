@@ -1,4 +1,5 @@
 <script>
+  
 	let mobileMenuOpen = false;
   
 	function toggleMenu() {
@@ -10,13 +11,13 @@
 	<div class="logo">
 	  <a href="/">GGLVXD.EU.ORG</a>
 	</div>
-	
+  
 	<button class="mobile-menu-btn" on:click={toggleMenu}>
 	  <span>{mobileMenuOpen ? '✖' : '☰'}</span>
 	</button>
   
 	<nav class={`nav-links ${mobileMenuOpen ? 'open' : ''}`}>
-	  <a href="/">Home</a>
+	  <a href="/">Home</a>  <!-- Use the _ function for translation -->
 	  <a href="/blog" target="_blank">Blog</a>
 	  <a href="https://status.gglvxd.eu.org" target="_blank">Status</a>
 	  <a href="https://github.com/gglvxd/website" target="_blank">Github</a>

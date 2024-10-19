@@ -7,7 +7,10 @@
         { name: 'Instagram', url: 'https://www.instagram.com/gglvxd/', icon: 'fa-brands fa-instagram' },
         { name: 'YouTube', url: 'https://www.youtube.com/@gglvxd', icon: 'fa-brands fa-youtube' }
     ];
+    import { t } from '$lib/translations';
+    const GGLVXD = 'GGLVXD';
 </script>
+
 <style>
     @import '../homepage/homepage.css';
     @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css';
@@ -20,7 +23,7 @@
             <img src="/gglvxd.png" alt="Profile Picture" class="pfp" />
         </div>
         <div class="info">
-            <h1 class="name">GGLVXD</h1>
+            <h1 class="name">{$t('homepage.gglvxd', { GGLVXD })}</h1>
         </div>
         <div class="social-icons">
             {#each socialLinks as { name, url, icon }}

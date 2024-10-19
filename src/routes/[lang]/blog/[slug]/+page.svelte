@@ -1,7 +1,7 @@
 <script>
   export let data;
   const { post, metadata } = data;
-  import Header from '../../../header/header.svelte';
+  import Header from '../../../../header/header.svelte';
 </script>
 
 <main>
