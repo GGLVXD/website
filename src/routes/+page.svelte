@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>gglvxd.eu.org</title>
+	<title>GGLVXD.EU.ORG</title>
 	<meta name="description" content="gglvxd.eu.org official website" />
 </svelte:head>
 
@@ -13,8 +13,3 @@
 <Header />
 <Footer />
 </main>
-
-<section>
-	<h1>hi
-</h1>
-</section>

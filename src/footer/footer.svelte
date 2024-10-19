@@ -4,8 +4,7 @@
         { name: 'GitHub', url: 'https://github.com/gglvxd', icon: 'fa-brands fa-github' },
         { name: 'TikTok', url: 'https://tiktok.com/@gglvxd', icon: 'fa-brands fa-tiktok' },
         { name: 'Instagram', url: 'https://www.instagram.com/gglvxd/', icon: 'fa-brands fa-instagram' },
-        { name: 'YouTube', url: 'https://www.youtube.com/@gglvxd', icon: 'fa-brands fa-youtube' },
-        { name: 'Pornhub', url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', icon: 'fa-solid fa-music' }
+        { name: 'YouTube', url: 'https://www.youtube.com/@gglvxd', icon: 'fa-brands fa-youtube' }
     ];
     import '../footer/footer.css';
 </script>

@@ -45,7 +45,7 @@ footer {
 }
 
 .social-icons a:hover {
-    color: #61dafb; /* light blue */
+    color: #61dafb; 
     transform: scale(1.2);
 }
 
