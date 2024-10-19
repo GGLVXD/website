@@ -1,58 +1,60 @@
 .header {
-	font-family: 'Poppins', sans-serif;
-	background-color: #282c34;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1rem 2rem;
-	color: white;
-	position: sticky;
-	top: 0;
-	z-index: 1000;
-	width: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: #282c34;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
+    box-sizing: border-box;
 }
-
-.logo {
+  
+  
+  .logo {
 	margin-right: auto;
-}
-
-.logo a {
+  }
+  
+  .logo a {
 	font-size: 1.8rem;
-	font-weight: 600; 
+	font-weight: 600;
 	color: white;
 	text-decoration: none;
 	transition: color 0.3s ease-in-out;
-}
-
-.logo a:hover {
+  }
+  
+  .logo a:hover {
 	color: #61dafb;
-}
-
-.nav-links {
+  }
+  
+  .nav-links {
 	display: flex;
 	gap: 2rem;
 	font-size: 1rem;
 	align-items: center;
 	justify-content: flex-end;
 	margin-left: auto;
-}
-
-.nav-links a {
+  }
+  
+  .nav-links a {
 	color: white;
 	text-decoration: none;
-	font-weight: 500; 
-	letter-spacing: 0.05rem; 
+	font-weight: 500;
 	padding-bottom: 2px;
 	position: relative;
-	transition: color 0.3s ease-in-out, padding-bottom 0.3s ease;
-}
-
-.nav-links a:hover {
+	transition: color 0.3s ease-in-out;
+  }
+  
+  .nav-links a:hover {
 	color: #61dafb;
-	padding-bottom: 5px; 
-}
-
-.nav-links a::after {
+  }
+  
+  .nav-links a::after {
 	content: "";
 	position: absolute;
 	bottom: 0;
@@ -61,30 +63,30 @@
 	height: 2px;
 	background-color: #61dafb;
 	transition: width 0.3s ease-in-out;
-}
-
-.nav-links a:hover::after {
+  }
+  
+  .nav-links a:hover::after {
 	width: 100%;
-}
-
-.nav-links a.active {
+  }
+  
+  .nav-links a.active {
 	color: #61dafb;
-}
-
-.nav-links a.active::after {
-	width: 100%; 
-}
-
-.mobile-menu-btn {
+  }
+  
+  .nav-links a.active::after {
+	width: 100%;
+  }
+  
+  .mobile-menu-btn {
 	display: none;
 	background: none;
 	border: none;
 	color: white;
 	font-size: 2rem;
 	cursor: pointer;
-}
-
-@media (max-width: 768px) {
+  }
+  
+  @media (max-width: 768px) {
 	.nav-links {
 	  position: absolute;
 	  top: 100%;
@@ -95,22 +97,23 @@
 	  padding: 1rem 2rem;
 	  display: none;
 	}
-
+  
 	.nav-links.open {
 	  display: flex;
 	}
-
+  
 	.mobile-menu-btn {
 	  display: block;
 	}
-}
-
-@media (max-width: 480px) {
+  }
+  
+  @media (max-width: 480px) {
 	.logo a {
 	  font-size: 1.5rem;
 	}
-
+  
 	.nav-links {
 	  gap: 1rem;
 	}
-}
+  }
+  

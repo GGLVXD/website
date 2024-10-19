@@ -2,6 +2,7 @@
     --base-bg-color: #282c34;
     --card-bg-color: #2f3640;
     --text-color: #ffffff;
+    --icon-color: #ffffff;
     --accent-color: #ff4081;
     --animation-duration: 0.6s;
 }
@@ -21,19 +22,26 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
+    padding-top: 65px;
 }
 
 header {
-    flex-shrink: 0; 
+    background-color: var(--base-bg-color);
+    padding: 20px;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    position: relative; 
 }
 
 .main-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-grow: 1; 
-    padding: 0 20px;
-    height: 100%;
+    flex-grow: 1;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 40px; 
 }
 
 .profile-card {
@@ -68,10 +76,21 @@ header {
     margin-bottom: 0.5rem;
 }
 
-.description {
-    font-size: 1.1rem;
-    color: var(--text-color);
-    opacity: 0.8;
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: var(--icon-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--accent-color);
 }
 
 @keyframes fadeInUp {
@@ -105,7 +124,7 @@ header {
         font-size: 1.75rem;
     }
 
-    .description {
-        font-size: 1rem;
+    .social-icons a {
+        font-size: 1.3rem;
     }
 }

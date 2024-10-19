@@ -17,6 +17,7 @@
   
 	<nav class={`nav-links ${mobileMenuOpen ? 'open' : ''}`}>
 	  <a href="/">Home</a>
+	  <a href="/blog" target="_blank">Blog</a>
 	  <a href="https://status.gglvxd.eu.org" target="_blank">Status</a>
 	  <a href="https://github.com/gglvxd/website" target="_blank">Github</a>
 	</nav>
