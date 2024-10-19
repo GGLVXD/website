@@ -1,0 +1,9 @@
+---
+title: "My Second Blog Post"
+date: "2024-02-01"
+description: "Description for the second post."
+---
+
+# Hello from the second post!
+
+Here is some content for the second post.
