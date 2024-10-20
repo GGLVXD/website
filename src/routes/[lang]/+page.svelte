@@ -1,9 +1,9 @@
 
 <script>
-	import '../app.css';
-	import Header from '../header/header.svelte';
-	import Footer from '../footer/footer.svelte';
-	import Homepage from '../homepage/homepage.svelte';
+	import '../../app.css';
+	import Header from '../../header/header.svelte';
+	import Footer from '../../footer/footer.svelte';
+	import Homepage from '../../homepage/homepage.svelte';
 </script>
 
 <svelte:head>

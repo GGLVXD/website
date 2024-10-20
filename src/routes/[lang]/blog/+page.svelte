@@ -3,7 +3,7 @@
     const { posts } = data;
     import Header from '../../../header/header.svelte';
     import Footer from '../../../footer/footer.svelte';
-    import '../../routes/blog/page.css'
+    import './page.css'
   </script>
 
 <main>

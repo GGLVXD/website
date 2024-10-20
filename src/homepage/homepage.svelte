@@ -8,7 +8,6 @@
         { name: 'YouTube', url: 'https://www.youtube.com/@gglvxd', icon: 'fa-brands fa-youtube' }
     ];
     import { t } from '$lib/translations';
-    const GGLVXD = 'GGLVXD';
 </script>
 
 <style>
@@ -23,7 +22,7 @@
             <img src="/gglvxd.png" alt="Profile Picture" class="pfp" />
         </div>
         <div class="info">
-            <h1 class="name">{$t('homepage.gglvxd', { GGLVXD })}</h1>
+            <h1 class="name">{$t('gglvxd')}</h1>
         </div>
         <div class="social-icons">
             {#each socialLinks as { name, url, icon }}
